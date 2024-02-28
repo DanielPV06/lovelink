@@ -23,7 +23,7 @@ class _MatchesState extends State<Matches> {
                 width: 300,
                 height: 500,
                 decoration: BoxDecoration(
-                  image: DecorationImage(image: AssetImage("assets/tests/person1.png"), fit: BoxFit.cover),
+                  image: DecorationImage(image: AssetImage("assets/tests/person3.png"), fit: BoxFit.cover),
                   borderRadius: BorderRadius.circular(5),
                   border: Border.all(color: Colors.black),
                 ),
