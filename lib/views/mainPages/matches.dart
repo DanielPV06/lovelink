@@ -52,7 +52,7 @@ class _MatchesState extends State<Matches> {
                     ),
                     const Positioned(
                       top: 10,
-                      left: 10,
+                      left: 170,
                       child: Text(
                         'Genero: Hombre',
                         style: TextStyle(
@@ -64,7 +64,7 @@ class _MatchesState extends State<Matches> {
                     ),
                     const Positioned(
                       top: 30,
-                      left: 10,
+                      left: 170,
                       child: Text(
                         'Edad: 25',
                         style: TextStyle(
@@ -76,12 +76,12 @@ class _MatchesState extends State<Matches> {
                     ),
                     const Positioned(
                       top: 10,
-                      left: 170,
+                      left: 10,
                       child: Text(
-                        'Nombre: Daniel',
+                        'Daniel',
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 16,
+                          fontSize: 25,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
