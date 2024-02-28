@@ -74,6 +74,18 @@ class _MatchesState extends State<Matches> {
                         ),
                       ),
                     ),
+                    const Positioned(
+                      top: 10,
+                      left: 170,
+                      child: Text(
+                        'Nombre: Daniel',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
                       Column(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
