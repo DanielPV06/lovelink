@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:lovelink/views/components/PositionedText.dart';
 import 'package:lovelink/views/components/MatchButton.dart';
 
 class Matches extends StatefulWidget {
@@ -22,6 +23,12 @@ class _MatchesState extends State<Matches> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xff292929),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        leading: BackButton(
+          color: Colors.black,
+        ),
+      ),
       body: Stack(
         children: [
           Column(
@@ -41,7 +48,7 @@ class _MatchesState extends State<Matches> {
                   children: [
                     Container(
                       width: double.infinity,
-                      height: 70,
+                      height: 65,
                       decoration: BoxDecoration(
                         color: Colors.black.withOpacity(0.3),
                         borderRadius: const BorderRadius.only(
@@ -50,41 +57,14 @@ class _MatchesState extends State<Matches> {
                         )
                       ),
                     ),
-                    const Positioned(
-                      top: 10,
-                      left: 170,
-                      child: Text(
-                        'Genero: Hombre',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                    const Positioned(
-                      top: 30,
-                      left: 170,
-                      child: Text(
-                        'Edad: 25',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                    const Positioned(
-                      top: 10,
-                      left: 10,
-                      child: Text(
-                        'Daniel',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+                     Container(
+                       child: PositionedText(textLabel: "Genero: Hombre", top: 7, left: 160, textSize: 16, width: 140, height: 60,),
+                     ),
+                     Container(
+                       child: PositionedText(textLabel: "Edad: 22", top: 30, left: 160, textSize: 16, width: 130, height: 60,),
+                     ),
+                    Container(
+                      child: PositionedText(textLabel: "Daniela", top: 5, left: 10, textSize: 23, width: 140, height: 160,),
                     ),
                       Column(
                       mainAxisAlignment: MainAxisAlignment.end,
@@ -108,7 +88,7 @@ class _MatchesState extends State<Matches> {
                   ],
                 ),
               ),
-              const Spacer(flex: 4,)
+              const Spacer(flex: 10,)
             ],
           )
         ],

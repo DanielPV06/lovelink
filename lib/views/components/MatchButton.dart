@@ -34,11 +34,6 @@ class MatchButton extends StatelessWidget {
               child: Image.asset(imagePath,
               height: 30,
               width: 30,)
-                /*Icon(
-                  icono,
-                  color: icono2,
-                  size: 30,
-                ),*/
             ),
           ),
         )
