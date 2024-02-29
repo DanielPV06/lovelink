@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:lovelink/views/components/LoveButton.dart';
 import 'package:lovelink/views/components/LoveTextField.dart';
 import 'package:lovelink/views/components/Sizer.dart';
+import 'package:lovelink/views/components/CheckBox.dart';
 
 class Registro extends StatefulWidget {
+
+
+
   const Registro({super.key});
 
 
@@ -12,6 +16,7 @@ class Registro extends StatefulWidget {
 }
 
 class _RegistroState extends State<Registro> {
+  bool isChecked = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,26 +32,35 @@ class _RegistroState extends State<Registro> {
           const SizedBox(height: 10),
           LoveTextField(Placeholder: "Telefono", Wsize: getTextFieldSize(context), icono: Icon(Icons.phone),),
           const SizedBox(height: 10),
-          LoveTextField(Placeholder: "Contrasaña", Wsize: getTextFieldSize(context), icono: Icon(Icons.lock),),
+          LoveTextField(Placeholder: "Contrasaña", Wsize: getTextFieldSize(context), icono: Icon(Icons.lock), isObscured: true,),
           const SizedBox(height: 10),
-          LoveTextField(Placeholder: "Confirmar contraseña", Wsize: getTextFieldSize(context), icono: Icon(Icons.lock),),
+          LoveTextField(Placeholder: "Confirmar contraseña", Wsize: getTextFieldSize(context), icono: Icon(Icons.lock), isObscured: true,),
           const SizedBox(height: 10,),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text("Acepta los terminos y condiciones", style: TextStyle(fontSize: 15),),
               const SizedBox(width: 10,),
-              Container(
-                width: 15,
-                height: 15,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(color: Colors.black)
-                ),
-              )
-            ],),
+              const CheckBoxLove()
+            ],
+          ),
           const Spacer(),
-          LoveButton(texto: "Registrar", Wsize: getTextFieldSize(context)),
+        ElevatedButton(
+          child:  LoveButton(texto: "Registrar", Wsize: getTextFieldSize(context)),
+          onPressed: () {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text("Registrado correctamente"),
+                action: SnackBarAction(
+                  label: 'Cerrar',
+                  onPressed: () {
+                    print("Registrado");
+                  },
+                ),
+              ),
+            );
+          },
+        ),
           const Spacer(),
         ],
       ),
